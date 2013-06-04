@@ -1,0 +1,139 @@
+// Enabling flexbox: setting an element to be a flex container
+@mixin display-flex() {
+    @include experimental-value(display, box, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+    @include experimental-value(display, flexbox, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
+    @include experimental-value(display, flex, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin display-inline-flex() {
+    @include experimental-value(display, inline-box, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+    @include experimental-value(display, inline-flexbox, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
+    @include experimental-value(display, inline-flex, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+// Axis alignment: specifying alignment of items along the main flexbox axis
+
+$default-justify-content: flex-start !default;
+
+@mixin justify-content(
+    $justification: $default-justify-content
+) {
+    @include flex-property(justify-content, $justification, flex-pack, box-pack);
+}
+
+// Cross-axis alignment: specifying alignment of items along the cross-axis
+
+$default-align-items: stretch !default;
+
+@mixin align-items(
+    $alignment: $default-align-items
+) {
+    @include flex-property(align-items, $alignment, flex-align, box-align);
+}
+
+// Individual cross-axis alignment: override to align individual items along the cross-axis
+
+$default-align-self: stretch !default;
+
+@mixin align-self(
+    $alignment: $default-align-self
+) {
+    @include flex-property(align-self, $alignment, flex-item-align, null);
+}
+
+// Flex line alignment: specifying alignment of flex lines along the cross-axis
+
+$default-align-content: stretch !default;
+
+@mixin align-content(
+    $alignment: $default-align-content
+) {
+    @include flex-property(align-items, $alignment, flex-line-pack, null);
+}
+
+// Display order: specifying the order of flex items
+
+$default-order: 1 !default;
+
+@mixin order(
+    $order: $default-order
+) {
+    @include flex-property(order, $order, flex-order, box-ordinal-group);
+}
+
+// Flexibility: specifying how the size of items flex
+
+$default-flex: 1 !default;
+
+@mixin flex(
+    $amount: $default-flex
+) {
+    @include flex-property(flex, $amount, flex, box-flex);
+}
+
+$default-flex-grow: $default-flex !default;
+
+@mixin flex-grow(
+    $amount: $default-flex-grow
+) {
+    @include flex-property(flex-grow, $amount);
+}
+
+$default-flex-shrink: $default-flex !default;
+
+@mixin flex-shrink(
+    $amount: $default-flex-shrink
+) {
+    @include flex-property(flex-shrink, $amount);
+}
+
+$default-flex-basis: $default-flex !default;
+
+@mixin flex-basis(
+    $amount: $default-flex-basis
+) {
+    @include flex-property(flex-basis, $amount);
+}
+
+// Direction: specifying the direction of the main flexbox axis
+
+$default-flex-direction: row !default;
+
+@mixin flex-direction(
+    $direction: $default-flex-direction
+) {
+    @include flex-property(flex-direction, $direction, flex-direction, box-direction);
+}
+
+// Wrapping: specifying whether and how flex items wrap along the cross-axis
+
+$default-flex-wrap: nowrap !default;
+
+@mixin flex-wrap(
+    $wrap: $default-flex-wrap
+) {
+    @include flex-property(flex-wrap, $direction, flex-wrap, box-lines);
+}
+
+@mixin flex-property($strandard-property, $value, $mid-property, $old-property)  {
+    $strandard-property: unquote($strandard-property);
+    $mid-property: unquote($mid-property);
+    $old-property: unquote($old-property);
+    $value: unquote($value);
+    $standard-value: $value;
+    $mid-value: $value;
+    $old-value: $value;
+
+    // Safari, Firefox (buggy), iOS, Android browser, older WebKit browsers
+    @if $old-property and $old-value {
+        @include experimental($old-property, $value, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+    }
+    // IE 10
+    @if $mid-property and $mid-value {
+        @include experimental($mid-property, $value, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
+    }
+    // Chrome 21+, Opera 12.1, Firefox 22+
+    @include experimental($strandard-property, $standard-value, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+
