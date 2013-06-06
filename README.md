@@ -133,15 +133,11 @@ Defines the element as a block-level flex container and its children as flex ite
 
 Defines the element as an atomic inline-level flex container and its children as flex items.
 
-TODO
-
   ```
   justify-content($justification)
   ```
 
 Specifies alignment of items along the main flexbox axis. [ flex-start | center | flex-end | space-between | space-around ]
-
-TODO
 
   ```
   align-items($alignment)
@@ -149,15 +145,11 @@ TODO
 
 Specifies alignment of items along the cross-axis. [ flex-start | center | flex-end | baseline | stretch ]
 
-TODO
-
   ```
   align-self($alignment)
   ```
 
 Individual flex item alignment along the cross-axis. [ flex-start | center | flex-end | baseline | stretch ]
-
-TODO
 
   ```
   align-content($alignment)
@@ -165,15 +157,11 @@ TODO
 
 Specifies alignment of flex lines along the cross-axis. Only takes effect when there are multiple flex lines. [ flex-start | center | flex-end | space-between | space-around | stretch ]
 
-TODO
-
   ```
   order($order)
   ```
 
 Specifies the order of flex items. [ *<integer>* ]
-
-TODO
 
   ```
   flex($amount)
@@ -181,14 +169,10 @@ TODO
 
 Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | *<flex-grow> <flex-shrink>*? || *<flex-basis>* ]
 
-TODO
-
   ```
   flex-grow($amount)
   ```
 Specifies the flex grow factor of a flex item. [ *<integer>* ]
-
-TODO
 
   ```
   flex-shrink($amount)
@@ -196,15 +180,11 @@ TODO
 
 Specifies the flex shrink factor of a flex item. [ *<integer>* ]
 
-TODO
-
   ```
   flex-basis($amount)
   ```
 
 Specifies the flex basis which is the initial main size of a flex item. [ *<width>* ]
-
-TODO
 
   ```
   flex-direction($direction)
@@ -212,23 +192,17 @@ TODO
 
 Specifies the direction of the main flexbox axis. [ row | row-reverse | column | column-reverse ]
 
-TODO
-
   ```
   flex-wrap($wrap)
   ```
 
 Specifies if and how flex items wrap along the cross-axis. [ nowrap | wrap | wrap-reverse ]
 
-TODO
-
   ```
   flex-flow($flow)
   ```
 
 Shorthand for `flex-direction` and `flex-wrap`. [ *<flex-direction>* *<flex-flow>* ]
-
-TODO
 
 ### Demo
 
