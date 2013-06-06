@@ -127,79 +127,79 @@ Shorthand for `flex-direction` and `flex-wrap`
 
 Defines the element as a block-level flex container and its children as flex items.
 
-  ```
-  display-inline-flex
+  ```scss
+  @mixin display-inline-flex
   ```
 
 Defines the element as an atomic inline-level flex container and its children as flex items.
 
-  ```
-  justify-content($justification)
+  ```scss
+  @mixin justify-content($justification)
   ```
 
 Specifies alignment of items along the main flexbox axis. [ flex-start | center | flex-end | space-between | space-around ]
 
-  ```
-  align-items($alignment)
+  ```scss
+  @mixin align-items($alignment)
   ```
 
 Specifies alignment of items along the cross-axis. [ flex-start | center | flex-end | baseline | stretch ]
 
-  ```
-  align-self($alignment)
+  ```scss
+  @mixin align-self($alignment)
   ```
 
 Individual flex item alignment along the cross-axis. [ flex-start | center | flex-end | baseline | stretch ]
 
-  ```
-  align-content($alignment)
+  ```scss
+  @mixin align-content($alignment)
   ```
 
 Specifies alignment of flex lines along the cross-axis. Only takes effect when there are multiple flex lines. [ flex-start | center | flex-end | space-between | space-around | stretch ]
 
-  ```
-  order($order)
+  ```scss
+  @mixin order($order)
   ```
 
 Specifies the order of flex items. [ `integer` ]
 
-  ```
-  flex($amount)
+  ```scss
+  @mixin flex($amount)
   ```
 
 Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | `flex-grow` `flex-shrink`? || `flex-basis` ]
 
-  ```
-  flex-grow($amount)
+  ```scss
+  @mixin flex-grow($amount)
   ```
 Specifies the flex grow factor of a flex item. [ `integer` ]
 
-  ```
-  flex-shrink($amount)
+  ```scss
+  @mixin flex-shrink($amount)
   ```
 
 Specifies the flex shrink factor of a flex item. [ `integer` ]
 
-  ```
-  flex-basis($amount)
+  ```scss
+  @mixin flex-basis($amount)
   ```
 
 Specifies the flex basis which is the initial main size of a flex item. [ `width` ]
 
-  ```
-  flex-direction($direction)
+  ```scss
+  @mixin flex-direction($direction)
   ```
 
 Specifies the direction of the main flexbox axis. [ row | row-reverse | column | column-reverse ]
 
-  ```
-  flex-wrap($wrap)
+  ```scss
+  @mixin flex-wrap($wrap)
   ```
 
 Specifies if and how flex items wrap along the cross-axis. [ nowrap | wrap | wrap-reverse ]
 
-  ```
-  flex-flow($flow)
+  ```scss
+  @mixin flex-flow($flow)
   ```
 
 Shorthand for `flex-direction` and `flex-wrap`. [ `flex-direction` `flex-wrap` ]
