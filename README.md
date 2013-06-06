@@ -121,8 +121,8 @@ Shorthand for `flex-direction` and `flex-wrap`
 
 ## Mixins
 
-  ```
-  display-flex
+  ```scss
+  @mixin display-flex
   ```
 
 Defines the element as a block-level flex container and its children as flex items.
