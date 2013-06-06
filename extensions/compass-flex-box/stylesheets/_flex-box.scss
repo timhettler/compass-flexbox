@@ -107,7 +107,7 @@ $default-flex-direction: row !default;
     @include flex-property(flex-direction, $direction, flex-direction, box-orient);
 }
 
-// Wrapping: specifying whether and how flex items wrap along the cross-axis
+// Wrapping: specifying if and how flex items wrap along the cross-axis
 
 $default-flex-wrap: nowrap !default;
 

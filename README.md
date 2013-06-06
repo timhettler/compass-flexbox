@@ -53,6 +53,72 @@ By default, the extension doesn't add any files to your project. An example scss
 
 Alignment of items along the main flexbox axis
 
+  ```scss
+  $default-align-items: stretch;
+  ```
+
+Alignment of items along the cross-axis
+
+  ```scss
+  $default-align-self: stretch;
+  ```
+
+Override to align individual items along the cross-axis
+
+  ```scss
+  $default-align-content: stretch;
+  ```
+
+Alignment of flex lines along the cross-axis
+
+  ```scss
+  $default-order: 1;
+  ```
+
+Order of flex items
+
+  ```scss
+  $default-flex: 1;
+  ```
+
+How the size of items flex
+
+  ```scss
+  $default-flex-grow: $default-flex;
+  ```
+
+TODO
+
+  ```scss
+  $default-flex-shrink: $default-flex;
+  ```
+
+TODO
+
+  ```scss
+  $default-flex-basis: $default-flex;
+  ```
+
+TODO
+
+  ```scss
+  $default-flex-direction: row;
+  ```
+
+The direction of the main flexbox axis
+
+  ```scss
+  $default-flex-wrap: nowrap;
+  ```
+
+If and how flex items wrap along the cross-axis
+
+  ```scss
+  $default-flex-flow: $default-flex-direction $default-flex-wrap;
+  ```
+
+Shorthand for `flex-direction` and `flex-wrap`
+
 ### Demo
 
 More examples can be found here: http://timhettler.github.io/compass-flex-box/
