@@ -167,7 +167,7 @@ Specifies the order of flex items. [ `integer` ]
   flex($amount)
   ```
 
-Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | `flex-grow\> \<flex-shrink`? || `flex-basis` ]
+Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | `flex-grow` `flex-shrink`? || `flex-basis` ]
 
   ```
   flex-grow($amount)
@@ -202,7 +202,7 @@ Specifies if and how flex items wrap along the cross-axis. [ nowrap | wrap | wra
   flex-flow($flow)
   ```
 
-Shorthand for `flex-direction` and `flex-wrap`. [ `flex-direction` `flex-flow` ]
+Shorthand for `flex-direction` and `flex-wrap`. [ `flex-direction` `flex-wrap` ]
 
 ### Demo
 
