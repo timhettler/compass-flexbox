@@ -43,81 +43,167 @@ By default, the extension doesn't add any files to your project. An example scss
 # Usage
 
   ```scss
-  @import 'flex-box';
+  @import 'flex-box'
   ```
 ## Configurable Variables
 
   ```scss
-  $default-justify-content: flex-start;
+  $default-justify-content: flex-start
   ```
 
 Alignment of items along the main flexbox axis
 
   ```scss
-  $default-align-items: stretch;
+  $default-align-items: stretch
   ```
 
 Alignment of items along the cross-axis
 
   ```scss
-  $default-align-self: stretch;
+  $default-align-self: stretch
   ```
 
 Override to align individual items along the cross-axis
 
   ```scss
-  $default-align-content: stretch;
+  $default-align-content: stretch
   ```
 
 Alignment of flex lines along the cross-axis
 
   ```scss
-  $default-order: 1;
+  $default-order: 1
   ```
 
 Order of flex items
 
   ```scss
-  $default-flex: 1;
+  $default-flex: 1
   ```
 
 How the size of items flex
 
   ```scss
-  $default-flex-grow: $default-flex;
+  $default-flex-grow: $default-flex
   ```
 
 TODO
 
   ```scss
-  $default-flex-shrink: $default-flex;
+  $default-flex-shrink: $default-flex
   ```
 
 TODO
 
   ```scss
-  $default-flex-basis: $default-flex;
+  $default-flex-basis: $default-flex
   ```
 
 TODO
 
   ```scss
-  $default-flex-direction: row;
+  $default-flex-direction: row
   ```
 
 The direction of the main flexbox axis
 
   ```scss
-  $default-flex-wrap: nowrap;
+  $default-flex-wrap: nowrap
   ```
 
 If and how flex items wrap along the cross-axis
 
   ```scss
-  $default-flex-flow: $default-flex-direction $default-flex-wrap;
+  $default-flex-flow: $default-flex-direction $default-flex-wrap
   ```
 
 Shorthand for `flex-direction` and `flex-wrap`
+
+## Mixins
+
+  ```scss
+  display-flex
+  ```
+
+TODO
+
+  ```scss
+  display-inline-flex
+  ```
+
+TODO
+
+  ```scss
+  justify-content($justification)
+  ```
+
+TODO
+
+  ```scss
+  align-items($alignment)
+  ```
+
+TODO
+
+  ```scss
+  align-self($alignment)
+  ```
+
+TODO
+
+  ```scss
+  align-content($alignment)
+  ```
+
+TODO
+
+  ```scss
+  order($order)
+  ```
+
+TODO
+
+  ```scss
+  flex($amount)
+  ```
+
+TODO
+
+  ```scss
+  flex-grow($amount)
+  ```
+
+TODO
+
+  ```scss
+  flex-shrink($amount)
+  ```
+
+TODO
+
+  ```scss
+  flex-basis($amount)
+  ```
+
+TODO
+
+  ```scss
+  flex-direction($direction)
+  ```
+
+TODO
+
+  ```scss
+  flex-wrap($wrap)
+  ```
+
+TODO
+
+  ```scss
+  flex-flow($flow)
+  ```
+
+TODO
 
 ### Demo
 
