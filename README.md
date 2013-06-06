@@ -121,85 +121,85 @@ Shorthand for `flex-direction` and `flex-wrap`
 
 ## Mixins
 
-  ```scss
+  ```
   display-flex
   ```
 
 TODO
 
-  ```scss
+  ```
   display-inline-flex
   ```
 
 TODO
 
-  ```scss
+  ```
   justify-content($justification)
   ```
 
 TODO
 
-  ```scss
+  ```
   align-items($alignment)
   ```
 
 TODO
 
-  ```scss
+  ```
   align-self($alignment)
   ```
 
 TODO
 
-  ```scss
+  ```
   align-content($alignment)
   ```
 
 TODO
 
-  ```scss
+  ```
   order($order)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex($amount)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex-grow($amount)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex-shrink($amount)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex-basis($amount)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex-direction($direction)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex-wrap($wrap)
   ```
 
 TODO
 
-  ```scss
+  ```
   flex-flow($flow)
   ```
 
