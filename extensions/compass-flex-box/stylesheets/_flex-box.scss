@@ -1,3 +1,5 @@
+@import "compass";
+
 // Enabling flexbox: setting an element to be a flex container
 @mixin display-flex() {
     @include experimental-value(display, box, -moz, -webkit, not -o, not -ms, not -khtml, not official);
@@ -102,7 +104,7 @@ $default-flex-direction: row !default;
 @mixin flex-direction(
     $direction: $default-flex-direction
 ) {
-    @include flex-property(flex-direction, $direction, flex-direction, box-direction);
+    @include flex-property(flex-direction, $direction, flex-direction, box-orient);
 }
 
 // Wrapping: specifying whether and how flex items wrap along the cross-axis
@@ -112,28 +114,170 @@ $default-flex-wrap: nowrap !default;
 @mixin flex-wrap(
     $wrap: $default-flex-wrap
 ) {
-    @include flex-property(flex-wrap, $direction, flex-wrap, box-lines);
+    @include flex-property(flex-wrap, $wrap, flex-wrap, box-lines);
 }
 
-@mixin flex-property($strandard-property, $value, $mid-property, $old-property)  {
-    $strandard-property: unquote($strandard-property);
+// Shorthand for flex-direction & flex-wrap
+
+$default-flex-flow: $default-flex-direction $default-flex-wrap !default;
+
+@mixin flex-flow(
+    $flow: $default-flex-flow
+) {
+    @include flex-property(flex-flow, $flow, flex-flow, null);
+}
+
+@mixin flex-property($standard-property, $value, $mid-property: null, $old-property: null)  {
+    $standard-property: unquote($standard-property);
     $mid-property: unquote($mid-property);
     $old-property: unquote($old-property);
     $value: unquote($value);
     $standard-value: $value;
-    $mid-value: $value;
-    $old-value: $value;
+    $mid-value: flex-value($standard-property, $value, mid);
+    $old-value: flex-value($standard-property, $value, old);
 
     // Safari, Firefox (buggy), iOS, Android browser, older WebKit browsers
     @if $old-property and $old-value {
-        @include experimental($old-property, $value, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+
+        // TODO flex-direction support
+        @include experimental($old-property, $old-value, -moz, -webkit, not -o, not -ms, not -khtml, not official);
     }
     // IE 10
     @if $mid-property and $mid-value {
-        @include experimental($mid-property, $value, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
+        @include experimental($mid-property, $mid-value, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
     }
     // Chrome 21+, Opera 12.1, Firefox 22+
-    @include experimental($strandard-property, $standard-value, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+    @include experimental($standard-property, $standard-value, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@function flex-value($property, $value, $syntax) {
+    $new-value: $value;
+    $warning: "\"#{$value}\" not supported for \"#{$property}\" in the \"" + $syntax + "\" syntax"  ;
+
+    @if $property == justify-content {
+        @if $value == flex-start {
+            @if $syntax == old or $syntax == mid {
+                $new-value: start;
+            }
+        }
+        @else if $value == flex-end {
+            @if $syntax == old or $syntax == mid {
+                $new-value: end;
+            }
+        }
+        @else if $value == space-between {
+            @if $syntax == old or $syntax == mid {
+                $new-value: justify;
+            }
+        }
+        @else if $value == space-around {
+            @if $syntax == old {
+                $new-value: null;
+            } @else if $syntax == mid {
+                $new-value: distribute;
+            }
+        }
+    }
+
+    @if $property == align-items {
+        @if $value == flex-start {
+            @if $syntax == old or $syntax == mid {
+                $new-value: start;
+            }
+        }
+        @else if $value == flex-end {
+            @if $syntax == old or $syntax == mid {
+                $new-value: end;
+            }
+        }
+    }
+
+    @if $property == align-self {
+        @if $value == flex-start {
+            @if $syntax == mid {
+                $new-value: start;
+            }
+        }
+        @else if $value == flex-end {
+            @if $syntax == mid {
+                $new-value: end;
+            }
+        }
+    }
+
+    @if $property == align-content {
+        @if $value == flex-start {
+            @if $syntax == mid {
+                $new-value: start;
+            }
+        }
+        @else if $value == flex-end {
+            @if $syntax == mid {
+                $new-value: end;
+            }
+        }
+        @else if $value == space-between {
+            @if $syntax == mid {
+                $new-value: justify;
+            }
+        }
+        @else if $value == space-around {
+            @if $syntax == mid {
+                $new-value: distribute;
+            }
+        }
+    }
+
+    @if $property == order {
+        @if $syntax == old and $value < 1 {
+            $warning: "\"#{$property}\" must be a positive integer in the \"#{$syntax}\" syntax";
+            $new-value: null;
+        }
+    }
+
+    @if $property == flex {
+        @if $syntax == old and type_of($value) != number {
+            $warning: "\"#{$property}\" only accepts an integer in the \"#{$syntax}\" syntax";
+            $new-value: null;
+        }
+    }
+
+    @if $property == flex-direction {
+        @if $value == row {
+            @if $syntax == old {
+                $new-value: horizontal;
+            }
+        }
+        @else if $value == column {
+            @if $syntax == old {
+                $new-value: vertical;
+            }
+        }
+    }
+
+    @if $property == flex-wrap {
+        @if $value == nowrap {
+            @if $syntax == old {
+                $new-value: single;
+            }
+        }
+        @else if $value == wrap {
+            @if $syntax == old {
+                $new-value: multiple;
+            }
+        }
+        @else if $value == wrap-reverse {
+            @if $syntax == old {
+                $new-value: null;
+            }
+        }
+    }
+
+    @if $new-value == null {
+        @warn $warning;
+    }
+
+    @return $new-value;
 }
 
 
