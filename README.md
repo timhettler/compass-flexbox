@@ -161,30 +161,30 @@ Specifies alignment of flex lines along the cross-axis. Only takes effect when t
   order($order)
   ```
 
-Specifies the order of flex items. [ *<integer>* ]
+Specifies the order of flex items. [ *\<integer\>* ]
 
   ```
   flex($amount)
   ```
 
-Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | *<flex-grow> <flex-shrink>*? || *<flex-basis>* ]
+Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | *\<flex-grow\> \<flex-shrink\>*? || *\<flex-basis\>* ]
 
   ```
   flex-grow($amount)
   ```
-Specifies the flex grow factor of a flex item. [ *<integer>* ]
+Specifies the flex grow factor of a flex item. [ *\<integer\>* ]
 
   ```
   flex-shrink($amount)
   ```
 
-Specifies the flex shrink factor of a flex item. [ *<integer>* ]
+Specifies the flex shrink factor of a flex item. [ *\<integer\>* ]
 
   ```
   flex-basis($amount)
   ```
 
-Specifies the flex basis which is the initial main size of a flex item. [ *<width>* ]
+Specifies the flex basis which is the initial main size of a flex item. [ *\<width\>* ]
 
   ```
   flex-direction($direction)
@@ -202,7 +202,7 @@ Specifies if and how flex items wrap along the cross-axis. [ nowrap | wrap | wra
   flex-flow($flow)
   ```
 
-Shorthand for `flex-direction` and `flex-wrap`. [ *<flex-direction>* *<flex-flow>* ]
+Shorthand for `flex-direction` and `flex-wrap`. [ *\<flex-direction\>* *\<flex-flow\>* ]
 
 ### Demo
 
