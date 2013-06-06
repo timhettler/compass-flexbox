@@ -1,0 +1,402 @@
+/* line 3, ../sass/compass-flex-box.scss */
+body {
+  font-family: Helvetica;
+}
+
+/* line 7, ../sass/compass-flex-box.scss */
+.flex, .flex--justify-content--flex-start, .flex--justify-content--center, .flex--justify-content--flex-end, .flex--justify-content--space-between, .flex--justify-content--space-around, .flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch, .flex--align-self, .flex--flex-wrap--nowrap, .flex--flex-wrap--wrap, .flex--flex-wrap--wrap-reverse {
+  background-color: rgba(135, 206, 235, 0.2);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 250px;
+  width: 100%;
+}
+
+/* line 18, ../sass/compass-flex-box.scss */
+.flex--justify-content--flex-start {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+/* line 23, ../sass/compass-flex-box.scss */
+.flex--justify-content--center {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+/* line 28, ../sass/compass-flex-box.scss */
+.flex--justify-content--flex-end {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+/* line 33, ../sass/compass-flex-box.scss */
+.flex--justify-content--space-between {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* line 38, ../sass/compass-flex-box.scss */
+.flex--justify-content--space-around {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+/* line 43, ../sass/compass-flex-box.scss */
+.flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+/* line 48, ../sass/compass-flex-box.scss */
+.flex--align-items--flex-start {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+/* line 53, ../sass/compass-flex-box.scss */
+.flex--align-items--center {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* line 58, ../sass/compass-flex-box.scss */
+.flex--align-items--flex-end {
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/* line 63, ../sass/compass-flex-box.scss */
+.flex--align-items--baseline {
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+/* line 67, ../sass/compass-flex-box.scss */
+.flex--align-items--baseline > .flex-item:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--auto:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--flex-start:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--center:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--flex-end:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--baseline:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--stretch:first-child {
+  height: 100px;
+  line-height: 100px;
+}
+
+/* line 73, ../sass/compass-flex-box.scss */
+.flex--align-items--stretch {
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+/* line 78, ../sass/compass-flex-box.scss */
+.flex--align-self {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+/* line 82, ../sass/compass-flex-box.scss */
+.flex--align-self > .flex-item--auto {
+  -ms-flex-item-align: auto;
+  -webkit-align-self: auto;
+  align-self: auto;
+}
+/* line 87, ../sass/compass-flex-box.scss */
+.flex--align-self > .flex-item--flex-start {
+  -ms-flex-item-align: start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+/* line 92, ../sass/compass-flex-box.scss */
+.flex--align-self > .flex-item--center {
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+/* line 97, ../sass/compass-flex-box.scss */
+.flex--align-self > .flex-item--flex-end {
+  -ms-flex-item-align: end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+/* line 102, ../sass/compass-flex-box.scss */
+.flex--align-self > .flex-item--baseline {
+  -ms-flex-item-align: baseline;
+  -webkit-align-self: baseline;
+  align-self: baseline;
+}
+/* line 107, ../sass/compass-flex-box.scss */
+.flex--align-self > .flex-item--stretch {
+  -ms-flex-item-align: stretch;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+
+/* line 113, ../sass/compass-flex-box.scss */
+.flex--flex-wrap--nowrap {
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+/* line 118, ../sass/compass-flex-box.scss */
+.flex--flex-wrap--wrap {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* line 123, ../sass/compass-flex-box.scss */
+.flex--flex-wrap--wrap-reverse {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+/* line 130, ../sass/compass-flex-box.scss */
+.flex-item, .flex--align-self > .flex-item--auto, .flex--align-self > .flex-item--flex-start, .flex--align-self > .flex-item--center, .flex--align-self > .flex-item--flex-end, .flex--align-self > .flex-item--baseline, .flex--align-self > .flex-item--stretch {
+  background-color: hotpink;
+  color: white;
+  height: 220px;
+  line-height: 220px;
+  text-align: center;
+  width: 220px;
+}
+
+/* line 143, ../sass/compass-flex-box.scss */
+.holy-grail > header, .holy-grail > footer, .holy-grail-body article, .holy-grail-body nav, .holy-grail-body aside {
+  padding: 10px;
+}
+/* line 146, ../sass/compass-flex-box.scss */
+.is-mobile .holy-grail > header, .is-mobile .holy-grail > footer, .is-mobile .holy-grail-body article, .holy-grail-body .is-mobile article, .is-mobile .holy-grail-body nav, .holy-grail-body .is-mobile nav, .is-mobile .holy-grail-body aside, .holy-grail-body .is-mobile aside {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+}
+
+/* line 152, ../sass/compass-flex-box.scss */
+.holy-grail {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+/* line 159, ../sass/compass-flex-box.scss */
+.holy-grail.is-mobile {
+  max-width: 320px;
+}
+/* line 163, ../sass/compass-flex-box.scss */
+.holy-grail > header, .holy-grail > footer {
+  background-color: Moccasin;
+}
+
+/* line 169, ../sass/compass-flex-box.scss */
+.holy-grail-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin: 5px 0;
+  width: 100%;
+}
+/* line 175, ../sass/compass-flex-box.scss */
+.is-mobile .holy-grail-body {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+}
+/* line 180, ../sass/compass-flex-box.scss */
+.holy-grail-body article {
+  -webkit-box-flex: 3;
+  -moz-box-flex: 3;
+  -ms-flex: 3;
+  -webkit-flex: 3;
+  flex: 3;
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+  background-color: PaleTurquoise;
+  margin: 0 5px;
+  min-height: 100px;
+}
+/* line 188, ../sass/compass-flex-box.scss */
+.is-mobile .holy-grail-body article {
+  margin: 0;
+}
+/* line 193, ../sass/compass-flex-box.scss */
+.holy-grail-body nav {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+  background-color: hotpink;
+}
+/* line 200, ../sass/compass-flex-box.scss */
+.holy-grail-body aside {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-box-ordinal-group: 3;
+  -moz-box-ordinal-group: 3;
+  -ms-flex-order: 3;
+  -webkit-order: 3;
+  order: 3;
+  background-color: Thistle;
+}
+
+/* line 210, ../sass/compass-flex-box.scss */
+.flex-nav-item, .flex-nav-item--search {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #ccc;
+  border-left: 1px solid #999;
+  padding: 5px 10px;
+}
+
+/* line 221, ../sass/compass-flex-box.scss */
+.flex-nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+
+/* line 229, ../sass/compass-flex-box.scss */
+.flex-nav-item:hover {
+  background-color: #aaa;
+}
+
+/* line 234, ../sass/compass-flex-box.scss */
+.flex-nav-item--search {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+/* line 238, ../sass/compass-flex-box.scss */
+.flex-nav-item--search label {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+/* line 245, ../sass/compass-flex-box.scss */
+.flex-nav-item--search input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+/* line 257, ../sass/compass-flex-box.scss */
+.gridwall {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* line 266, ../sass/compass-flex-box.scss */
+.gridwall-item {
+  background-color: hotpink;
+  height: 220px;
+  line-height: 220px;
+  margin: 10px;
+  width: 220px;
+}
