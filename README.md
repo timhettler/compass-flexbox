@@ -1,4 +1,4 @@
-A compass extension to provide variables & mixins for the latest (and final) Flexbox specification. Translation from the official spec to the "mid" and "old" spec is done, when possible.
+A compass extension to provide variables & mixins for the latest (and final) Flexbox specification. When possible, the official syntax is translated to the "mid" and "old" syntax.
 
 For information on Flexbox in general, see these articles:
 
@@ -125,11 +125,13 @@ Shorthand for `flex-direction` and `flex-wrap`
   display-flex
   ```
 
-TODO
+Defines the element as a block-level flex container and its children as flex items.
 
   ```
   display-inline-flex
   ```
+
+Defines the element as an atomic inline-level flex container and its children as flex items.
 
 TODO
 
@@ -137,11 +139,15 @@ TODO
   justify-content($justification)
   ```
 
+Specifies alignment of items along the main flexbox axis. [ flex-start | center | flex-end | space-between | space-around ]
+
 TODO
 
   ```
   align-items($alignment)
   ```
+
+Specifies alignment of items along the cross-axis. [ flex-start | center | flex-end | baseline | stretch ]
 
 TODO
 
@@ -149,11 +155,15 @@ TODO
   align-self($alignment)
   ```
 
+Individual flex item alignment along the cross-axis. [ flex-start | center | flex-end | baseline | stretch ]
+
 TODO
 
   ```
   align-content($alignment)
   ```
+
+Specifies alignment of flex lines along the cross-axis. Only takes effect when there are multiple flex lines. [ flex-start | center | flex-end | space-between | space-around | stretch ]
 
 TODO
 
@@ -161,17 +171,22 @@ TODO
   order($order)
   ```
 
+Specifies the order of flex items. [ *<integer>* ]
+
 TODO
 
   ```
   flex($amount)
   ```
 
+Specifies how the size of items flex. Shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`. [ none | *<flex-grow> <flex-shrink>*? || *<flex-basis>* ]
+
 TODO
 
   ```
   flex-grow($amount)
   ```
+Specifies the flex grow factor of a flex item. [ *<integer>* ]
 
 TODO
 
@@ -179,11 +194,15 @@ TODO
   flex-shrink($amount)
   ```
 
+Specifies the flex shrink factor of a flex item. [ *<integer>* ]
+
 TODO
 
   ```
   flex-basis($amount)
   ```
+
+Specifies the flex basis which is the initial main size of a flex item. [ *<width>* ]
 
 TODO
 
@@ -191,17 +210,23 @@ TODO
   flex-direction($direction)
   ```
 
+Specifies the direction of the main flexbox axis. [ row | row-reverse | column | column-reverse ]
+
 TODO
 
   ```
   flex-wrap($wrap)
   ```
 
+Specifies if and how flex items wrap along the cross-axis. [ nowrap | wrap | wrap-reverse ]
+
 TODO
 
   ```
   flex-flow($flow)
   ```
+
+Shorthand for `flex-direction` and `flex-wrap`. [ *<flex-direction>* *<flex-flow>* ]
 
 TODO
 
