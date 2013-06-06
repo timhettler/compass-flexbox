@@ -87,19 +87,19 @@ How the size of items flex
   $default-flex-grow: $default-flex
   ```
 
-TODO
+The flex grow factor of a flex item
 
   ```scss
   $default-flex-shrink: $default-flex
   ```
 
-TODO
+The flex shrink factor of a flex item
 
   ```scss
   $default-flex-basis: $default-flex
   ```
 
-TODO
+The initial main size of a flex item
 
   ```scss
   $default-flex-direction: row
@@ -184,7 +184,7 @@ Specifies the flex shrink factor of a flex item. [ `integer` ]
   @mixin flex-basis($amount)
   ```
 
-Specifies the flex basis which is the initial main size of a flex item. [ `width` ]
+Specifies the flex basis. (The initial main size of a flex item.) [ `width` ]
 
   ```scss
   @mixin flex-direction($direction)
