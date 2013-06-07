@@ -275,6 +275,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
         }
         @else if $value == wrap {
             @if $syntax == legacy {
+                @warn "\"#{$property}: #{$value}\" is not supported consistently in the \"#{$syntax}\" syntax";
                 $new-value: multiple;
             }
         }
