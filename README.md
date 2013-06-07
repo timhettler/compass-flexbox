@@ -1,4 +1,4 @@
-A compass extension to provide variables & mixins for the latest (and final) Flexbox specification. When possible, the official syntax is translated to the "mid" and "old" syntax.
+A compass extension that provides variables & mixins for the latest (and final) Flexible Box Layout (flex-box) specification. When possible, the official syntax is translated to the "mid" and "old" syntax.
 
 For information on Flexbox in general, see these articles:
 

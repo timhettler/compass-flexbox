@@ -1,4 +1,6 @@
 @import "flex-box";
+@import "compass/css3/box-sizing";
+@import "compass/css3/transition";
 
 body {
   font-family: Helvetica;
@@ -128,12 +130,33 @@ body {
   $flex-item-dimension: 220px;
 
   .flex-item {
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
     background-color: hotpink;
     color: white;
     height: $flex-item-dimension;
-    line-height: $flex-item-dimension;
     text-align: center;
     width: $flex-item-dimension;
+  }
+
+// Centered Box
+
+.centered-box-container {
+  @extend %flex-container;
+  @include justify-content(center);
+  @include align-items(center);
+  height: 500px;
+}
+
+  .centered-box {
+    @extend .flex-item;
+    @include single-transition();
+
+    &:hover {
+      height: 400px;
+      width: 500px;
+    }
   }
 
 // Holy Grail
@@ -166,44 +189,44 @@ $holy-grail-margin: 5px;
   }
 }
 
-.holy-grail-body {
-  @include display-flex();
-  @include flex-direction(row);
-  margin: $holy-grail-margin 0;
-  width: 100%;
-
-  .is-mobile & {
-    @include flex-direction(column);
-    margin: 0;
-  }
-
-  article {
-    @extend %holy-grail-item;
-    @include flex(3);
-    @include order(2);
-    background-color: PaleTurquoise;
-    margin: 0 $holy-grail-margin;
-    min-height: 100px;
+  .holy-grail-body {
+    @include display-flex();
+    @include flex-direction(row);
+    margin: $holy-grail-margin 0;
+    width: 100%;
 
     .is-mobile & {
+      @include flex-direction(column);
       margin: 0;
     }
-  }
 
-  nav {
-    @extend %holy-grail-item;
-    @include flex(1);
-    @include order(1);
-    background-color: hotpink;
-  }
+    article {
+      @extend %holy-grail-item;
+      @include flex(3);
+      @include order(2);
+      background-color: PaleTurquoise;
+      margin: 0 $holy-grail-margin;
+      min-height: 100px;
 
-  aside {
-    @extend %holy-grail-item;
-    @include flex(1);
-    @include order(3);
-    background-color: Thistle;
+      .is-mobile & {
+        margin: 0;
+      }
+    }
+
+    nav {
+      @extend %holy-grail-item;
+      @include flex(1);
+      @include order(1);
+      background-color: hotpink;
+    }
+
+    aside {
+      @extend %holy-grail-item;
+      @include flex(1);
+      @include order(3);
+      background-color: Thistle;
+    }
   }
-}
 
 // Nav
 
@@ -223,31 +246,31 @@ $holy-grail-margin: 5px;
   width: 100%;
 }
 
-.flex-nav-item {
-  @extend %flex-nav-item;
+  .flex-nav-item {
+    @extend %flex-nav-item;
 
-  &:hover {
-    background-color: #aaa;
-  }
-}
-
-.flex-nav-item--search {
-  @extend %flex-nav-item;
-  @include flex(1);
-
-  label {
-    display: block;
-    margin: 0 auto;
-    max-width: 500px;
-    width: 100%;
+    &:hover {
+      background-color: #aaa;
+    }
   }
 
-  input {
-    @include box-sizing(border-box);
-    display: block;
-    width: 100%;
+  .flex-nav-item--search {
+    @extend %flex-nav-item;
+    @include flex(1);
+
+    label {
+      display: block;
+      margin: 0 auto;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    input {
+      @include box-sizing(border-box);
+      display: block;
+      width: 100%;
+    }
   }
-}
 
 // Gridwall
 
@@ -263,10 +286,10 @@ $gridwall-item-margin: 10px;
   text-align: center;
 }
 
-.gridwall-item {
-  background-color: hotpink;
-  height: $gridwall-item-dimension;
-  line-height: $gridwall-item-dimension;
-  margin: $gridwall-item-margin;
-  width: $gridwall-item-dimension;
-}
+  .gridwall-item {
+    background-color: hotpink;
+    height: $gridwall-item-dimension;
+    line-height: $gridwall-item-dimension;
+    margin: $gridwall-item-margin;
+    width: $gridwall-item-dimension;
+  }

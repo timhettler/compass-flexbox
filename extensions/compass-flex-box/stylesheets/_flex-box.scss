@@ -1,4 +1,4 @@
-@import "compass";
+@import "compass/css3/shared";
 
 // Enabling flexbox: setting an element to be a flex container
 @mixin display-flex() {
@@ -139,7 +139,9 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     // Safari, Firefox (buggy), iOS, Android browser, older WebKit browsers
     @if $old-property and $old-value {
 
-        // TODO flex-direction support
+        @if $standard-property == flex-direction and ($value == row-reverse or $value == column-reverse) {
+            @include experimental(box-direction, reverse, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+        }
         @include experimental($old-property, $old-value, -moz, -webkit, not -o, not -ms, not -khtml, not official);
     }
     // IE 10
@@ -152,7 +154,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
 
 @function flex-value($property, $value, $syntax) {
     $new-value: $value;
-    $warning: "\"#{$value}\" not supported for \"#{$property}\" in the \"" + $syntax + "\" syntax"  ;
+    $warning: false;
 
     @if $property == justify-content {
         @if $value == flex-start {
@@ -166,6 +168,9 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
             }
         }
         @else if $value == space-between {
+            @if $syntax == old {
+                $warning: "\"#{$property}: #{$value}\" does not work in the old Firefox implementation";
+            }
             @if $syntax == old or $syntax == mid {
                 $new-value: justify;
             }
@@ -243,12 +248,12 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     }
 
     @if $property == flex-direction {
-        @if $value == row {
+        @if $value == row or $value == row-reverse {
             @if $syntax == old {
                 $new-value: horizontal;
             }
         }
-        @else if $value == column {
+        @else if $value == column or $value == column-reverse {
             @if $syntax == old {
                 $new-value: vertical;
             }
@@ -273,8 +278,8 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
         }
     }
 
-    @if $new-value == null {
-        @warn $warning;
+    @if $new-value == null or $warning {
+        @warn if($warning, $warning, "\"#{$property}: #{$value}\" not supported in the \"" + $syntax + "\" syntax");
     }
 
     @return $new-value;
