@@ -210,4 +210,4 @@ Shorthand for `flex-direction` and `flex-wrap`. [ `flex-direction` `flex-wrap` ]
 
 ### Demo
 
-More examples can be found here: http://timhettler.github.io/compass-flex-box/
+Examples of common problems that can be solved with flexbox: http://timhettler.github.io/compass-flex-box/
