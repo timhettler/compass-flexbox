@@ -1,4 +1,8 @@
-A compass extension that provides variables & mixins for the latest (and final) Flexible Box Layout (flex-box) specification. When possible, the official syntax is translated to the "mid" and "old" syntax.
+# Compass Flexbox
+
+A compass extension that provides variables & mixins for the latest (and final) Flexible Box Layout (Flexbox) specification. When possible, the official syntax is translated to the "ie" and "legacy" syntax.
+
+I've added warnings when using a property that is incompatible with the older versions of Flexbox, or when a specific browser has a buggy implementation of a certain property/value combination. If you find them annoying, you can turn warnings off with the `--quiet` command-line option or the `:quiet` Sass option.
 
 For information on Flexbox in general, see these articles:
 
@@ -6,15 +10,15 @@ For information on Flexbox in general, see these articles:
 * [MDN: Using CSS flexible boxes](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes)
 * [Flexy Boxes: flexbox playground and code generator](http://the-echoplex.net/flexyboxes/)
 
-# Installation
+## Installation
 
-## Install the Ruby Gem.
+### Install the Ruby Gem.
 
   ```
   gem install compass-flex-box
   ```
 
-### Install into an existing project:
+#### Install into an existing project:
 
 Edit the project configuration file (`config.rb`) and add:
 
@@ -28,7 +32,7 @@ Then run this command from the root of your project:
   compass install compass-flex-box
   ```
 
-### When creating a new project:
+#### When creating a new project:
 
   ```
   compass create my_project -r compass-flex-box --using compass-flex-box
@@ -40,12 +44,12 @@ By default, the extension doesn't add any files to your project. An example scss
   compass install compass-flex-box/example
   ```
 
-# Usage
+## Usage
 
   ```scss
   @import 'flex-box'
   ```
-## Configurable Variables
+### Configurable Variables
 
   ```scss
   $default-justify-content: flex-start
@@ -119,7 +123,7 @@ If and how flex items wrap along the cross-axis
 
 Shorthand for `flex-direction` and `flex-wrap`
 
-## Mixins
+### Mixins
 
   ```scss
   @mixin display-flex

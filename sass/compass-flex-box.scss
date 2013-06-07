@@ -112,6 +112,26 @@ body {
   }
 }
 
+.flex--flex-direction--row {
+  @extend %flex-container;
+  @include flex-direction(row);
+}
+
+.flex--flex-direction--row-reverse {
+  @extend %flex-container;
+  @include flex-direction(row-reverse);
+}
+
+.flex--flex-direction--column {
+  @extend %flex-container;
+  @include flex-direction(column);
+}
+
+.flex--flex-direction--column-reverse {
+  @extend %flex-container;
+  @include flex-direction(column-reverse);
+}
+
 .flex--flex-wrap--nowrap {
   @extend %flex-container;
   @include flex-wrap(nowrap);

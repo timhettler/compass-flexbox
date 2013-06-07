@@ -4,7 +4,7 @@ body {
 }
 
 /* line 9, ../sass/compass-flex-box.scss */
-.flex, .flex--justify-content--flex-start, .flex--justify-content--center, .flex--justify-content--flex-end, .flex--justify-content--space-between, .flex--justify-content--space-around, .flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch, .flex--align-self, .flex--flex-wrap--nowrap, .flex--flex-wrap--wrap, .flex--flex-wrap--wrap-reverse, .centered-box-container {
+.flex, .flex--justify-content--flex-start, .flex--justify-content--center, .flex--justify-content--flex-end, .flex--justify-content--space-between, .flex--justify-content--space-around, .flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch, .flex--align-self, .flex--flex-direction--row, .flex--flex-direction--row-reverse, .flex--flex-direction--column, .flex--flex-direction--column-reverse, .flex--flex-wrap--nowrap, .flex--flex-wrap--wrap, .flex--flex-wrap--wrap-reverse, .centered-box-container {
   background-color: rgba(135, 206, 235, 0.2);
   display: -webkit-box;
   display: -moz-box;
@@ -159,6 +159,46 @@ body {
 }
 
 /* line 115, ../sass/compass-flex-box.scss */
+.flex--flex-direction--row {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* line 120, ../sass/compass-flex-box.scss */
+.flex--flex-direction--row-reverse {
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/* line 125, ../sass/compass-flex-box.scss */
+.flex--flex-direction--column {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 130, ../sass/compass-flex-box.scss */
+.flex--flex-direction--column-reverse {
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+/* line 135, ../sass/compass-flex-box.scss */
 .flex--flex-wrap--nowrap {
   -webkit-box-lines: single;
   -moz-box-lines: single;
@@ -167,7 +207,7 @@ body {
   flex-wrap: nowrap;
 }
 
-/* line 120, ../sass/compass-flex-box.scss */
+/* line 140, ../sass/compass-flex-box.scss */
 .flex--flex-wrap--wrap {
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
@@ -176,14 +216,14 @@ body {
   flex-wrap: wrap;
 }
 
-/* line 125, ../sass/compass-flex-box.scss */
+/* line 145, ../sass/compass-flex-box.scss */
 .flex--flex-wrap--wrap-reverse {
   -ms-flex-wrap: wrap-reverse;
   -webkit-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
 
-/* line 132, ../sass/compass-flex-box.scss */
+/* line 152, ../sass/compass-flex-box.scss */
 .flex-item, .flex--align-self > .flex-item--auto, .flex--align-self > .flex-item--flex-start, .flex--align-self > .flex-item--center, .flex--align-self > .flex-item--flex-end, .flex--align-self > .flex-item--baseline, .flex--align-self > .flex-item--stretch, .centered-box {
   display: -webkit-box;
   display: -moz-box;
@@ -207,7 +247,7 @@ body {
   width: 220px;
 }
 
-/* line 145, ../sass/compass-flex-box.scss */
+/* line 165, ../sass/compass-flex-box.scss */
 .centered-box-container {
   -webkit-box-pack: center;
   -moz-box-pack: center;
@@ -222,24 +262,24 @@ body {
   height: 500px;
 }
 
-/* line 152, ../sass/compass-flex-box.scss */
+/* line 172, ../sass/compass-flex-box.scss */
 .centered-box {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 156, ../sass/compass-flex-box.scss */
+/* line 176, ../sass/compass-flex-box.scss */
 .centered-box:hover {
   height: 400px;
   width: 500px;
 }
 
-/* line 166, ../sass/compass-flex-box.scss */
+/* line 186, ../sass/compass-flex-box.scss */
 .holy-grail > header, .holy-grail > footer, .holy-grail-body article, .holy-grail-body nav, .holy-grail-body aside {
   padding: 10px;
 }
-/* line 169, ../sass/compass-flex-box.scss */
+/* line 189, ../sass/compass-flex-box.scss */
 .is-mobile .holy-grail > header, .is-mobile .holy-grail > footer, .is-mobile .holy-grail-body article, .holy-grail-body .is-mobile article, .is-mobile .holy-grail-body nav, .holy-grail-body .is-mobile nav, .is-mobile .holy-grail-body aside, .holy-grail-body .is-mobile aside {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -253,7 +293,7 @@ body {
   order: 1;
 }
 
-/* line 175, ../sass/compass-flex-box.scss */
+/* line 195, ../sass/compass-flex-box.scss */
 .holy-grail {
   display: -webkit-box;
   display: -moz-box;
@@ -269,16 +309,16 @@ body {
   width: 800px;
   text-align: center;
 }
-/* line 182, ../sass/compass-flex-box.scss */
+/* line 202, ../sass/compass-flex-box.scss */
 .holy-grail.is-mobile {
   max-width: 320px;
 }
-/* line 186, ../sass/compass-flex-box.scss */
+/* line 206, ../sass/compass-flex-box.scss */
 .holy-grail > header, .holy-grail > footer {
   background-color: Moccasin;
 }
 
-/* line 192, ../sass/compass-flex-box.scss */
+/* line 212, ../sass/compass-flex-box.scss */
 .holy-grail-body {
   display: -webkit-box;
   display: -moz-box;
@@ -293,7 +333,7 @@ body {
   margin: 5px 0;
   width: 100%;
 }
-/* line 198, ../sass/compass-flex-box.scss */
+/* line 218, ../sass/compass-flex-box.scss */
 .is-mobile .holy-grail-body {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -302,7 +342,7 @@ body {
   flex-direction: column;
   margin: 0;
 }
-/* line 203, ../sass/compass-flex-box.scss */
+/* line 223, ../sass/compass-flex-box.scss */
 .holy-grail-body article {
   -webkit-box-flex: 3;
   -moz-box-flex: 3;
@@ -318,11 +358,11 @@ body {
   margin: 0 5px;
   min-height: 100px;
 }
-/* line 211, ../sass/compass-flex-box.scss */
+/* line 231, ../sass/compass-flex-box.scss */
 .is-mobile .holy-grail-body article {
   margin: 0;
 }
-/* line 216, ../sass/compass-flex-box.scss */
+/* line 236, ../sass/compass-flex-box.scss */
 .holy-grail-body nav {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -336,7 +376,7 @@ body {
   order: 1;
   background-color: hotpink;
 }
-/* line 223, ../sass/compass-flex-box.scss */
+/* line 243, ../sass/compass-flex-box.scss */
 .holy-grail-body aside {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -351,7 +391,7 @@ body {
   background-color: Thistle;
 }
 
-/* line 233, ../sass/compass-flex-box.scss */
+/* line 253, ../sass/compass-flex-box.scss */
 .flex-nav-item, .flex-nav-item--search {
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -373,7 +413,7 @@ body {
   padding: 5px 10px;
 }
 
-/* line 244, ../sass/compass-flex-box.scss */
+/* line 264, ../sass/compass-flex-box.scss */
 .flex-nav {
   display: -webkit-box;
   display: -moz-box;
@@ -383,12 +423,12 @@ body {
   width: 100%;
 }
 
-/* line 252, ../sass/compass-flex-box.scss */
+/* line 272, ../sass/compass-flex-box.scss */
 .flex-nav-item:hover {
   background-color: #aaa;
 }
 
-/* line 257, ../sass/compass-flex-box.scss */
+/* line 277, ../sass/compass-flex-box.scss */
 .flex-nav-item--search {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -396,14 +436,14 @@ body {
   -webkit-flex: 1;
   flex: 1;
 }
-/* line 261, ../sass/compass-flex-box.scss */
+/* line 281, ../sass/compass-flex-box.scss */
 .flex-nav-item--search label {
   display: block;
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
 }
-/* line 268, ../sass/compass-flex-box.scss */
+/* line 288, ../sass/compass-flex-box.scss */
 .flex-nav-item--search input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -412,7 +452,7 @@ body {
   width: 100%;
 }
 
-/* line 280, ../sass/compass-flex-box.scss */
+/* line 300, ../sass/compass-flex-box.scss */
 .gridwall {
   display: -webkit-box;
   display: -moz-box;
@@ -434,7 +474,7 @@ body {
   text-align: center;
 }
 
-/* line 289, ../sass/compass-flex-box.scss */
+/* line 309, ../sass/compass-flex-box.scss */
 .gridwall-item {
   background-color: hotpink;
   height: 220px;
