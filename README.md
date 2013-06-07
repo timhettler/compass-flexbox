@@ -2,7 +2,7 @@
 
 A compass extension that provides variables & mixins for the latest (and final) Flexible Box Layout (Flexbox) specification. When possible, the official syntax is translated to the "ie" and "legacy" syntax.
 
-I've added warnings when using a property that is incompatible with the older versions of Flexbox, or when a specific browser has a buggy implementation of a certain property/value combination. If you find them annoying, you can turn warnings off with the `--quiet` command-line option or the `:quiet` Sass option.
+Warnings are generated when using a property that is incompatible with the older versions of Flexbox, or when a specific browser has a buggy implementation of a certain property/value combination. If you find them annoying, you can turn warnings off with the `--quiet` command-line option or the `:quiet` Sass option.
 
 For information on Flexbox in general, see these articles:
 

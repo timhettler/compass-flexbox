@@ -451,34 +451,3 @@ body {
   display: block;
   width: 100%;
 }
-
-/* line 300, ../sass/compass-flex-box.scss */
-.gridwall {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1200px;
-  text-align: center;
-}
-
-/* line 309, ../sass/compass-flex-box.scss */
-.gridwall-item {
-  background-color: hotpink;
-  height: 220px;
-  line-height: 220px;
-  margin: 10px;
-  width: 220px;
-}
