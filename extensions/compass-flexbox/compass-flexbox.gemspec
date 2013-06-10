@@ -1,4 +1,4 @@
-require './lib/compass-flex-box'
+require './lib/compass-flexbox'
 
 Gem::Specification.new do |s|
   # Release Specific Information
@@ -6,12 +6,12 @@ Gem::Specification.new do |s|
   s.date = "2013-06-10"
 
   # Gem Details
-  s.name = "compass-flex-box"
-  s.description = "A compass extension that provides variables & mixins for the latest (and final) Flexible Box Layout (flex-box) specification"
-  s.summary = "A compass extension that provides variables & mixins for the latest (and final) Flexible Box Layout (flex-box) specification"
+  s.name = "compass-flexbox"
+  s.description = "A compass extension that provides variables & mixins for the latest Flexible Box Layout (flexbox) specification"
+  s.summary = "A compass extension that provides variables & mixins for the latest Flexible Box Layout (flexbox) specification"
   s.authors = ["Tim Hettler"]
   s.email = ["me+github@timhettler.com"]
-  s.homepage = "https://github.com/timhettler/compass-flex-box"
+  s.homepage = "https://github.com/timhettler/compass-flexbox"
 
   # Gem Files
 

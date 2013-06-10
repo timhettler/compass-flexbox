@@ -15,7 +15,7 @@ For information on Flexbox in general, see these articles:
 ### Install the Ruby Gem.
 
   ```
-  gem install compass-flex-box
+  gem install compass-flexbox
   ```
 
 #### Install into an existing project:
@@ -23,31 +23,31 @@ For information on Flexbox in general, see these articles:
 Edit the project configuration file (`config.rb`) and add:
 
   ```ruby
-  require 'compass-flex-box'
+  require 'compass-flexbox'
   ```
 
 Then run this command from the root of your project:
 
   ```
-  compass install compass-flex-box
+  compass install compass-flexbox
   ```
 
 #### When creating a new project:
 
   ```
-  compass create my_project -r compass-flex-box --using compass-flex-box
+  compass create my_project -r compass-flexbox --using compass-flexbox
   ```
 
 By default, the extension doesn't add any files to your project. An example scss and html file can be imported by installing the "example" pattern:
 
   ```
-  compass install compass-flex-box/example
+  compass install compass-flexbox/example
   ```
 
 ## Usage
 
   ```scss
-  @import 'flex-box'
+  @import 'flexbox'
   ```
 ### Configurable Variables
 
@@ -210,4 +210,4 @@ Shorthand for `flex-direction` and `flex-wrap`. [ `flex-direction` `flex-wrap` ]
 
 ### Demo
 
-Examples of common problems that can be solved with flexbox: http://timhettler.github.io/compass-flex-box/
+Examples of common problems that can be solved with flexbox: http://timhettler.github.io/compass-flexbox/
