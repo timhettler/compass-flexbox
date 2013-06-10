@@ -2,6 +2,8 @@
 @import "compass/css3/box-sizing";
 @import "compass/css3/transition";
 
+@import "libs/prism";
+
 body {
   font-family: Helvetica;
 }
@@ -13,151 +15,36 @@ body {
   width: 100%;
 }
 
-.flex {
-  @extend %flex-container;
-}
+$flex-item-dimension: 220px;
 
-.flex--justify-content--flex-start {
-  @extend %flex-container;
-  @include justify-content(flex-start);
-}
-
-.flex--justify-content--center {
-  @extend %flex-container;
+.flex-item {
+  @include display-flex();
   @include justify-content(center);
-}
-
-.flex--justify-content--flex-end {
-  @extend %flex-container;
-  @include justify-content(flex-end);
-}
-
-.flex--justify-content--space-between {
-  @extend %flex-container;
-  @include justify-content(space-between);
-}
-
-.flex--justify-content--space-around {
-  @extend %flex-container;
-  @include justify-content(space-around);
-}
-
-%flex-container--align-items {
-  @extend %flex-container;
-  @include justify-content(space-around);
-}
-
-.flex--align-items--flex-start {
-  @extend %flex-container--align-items;
-  @include align-items(flex-start);
-}
-
-.flex--align-items--center {
-  @extend %flex-container--align-items;
   @include align-items(center);
+  background-color: hotpink;
+  color: white;
+  height: $flex-item-dimension;
+  text-align: center;
+  width: $flex-item-dimension;
 }
 
-.flex--align-items--flex-end {
-  @extend %flex-container--align-items;
-  @include align-items(flex-end);
+.code-comparison {
+  @include display-flex();
+  margin: 1.5em 0;
+  width: 100%;
 }
 
-.flex--align-items--baseline {
-  @extend %flex-container--align-items;
-  @include align-items(baseline);
+  .code-comparison--child {
+    @include flex(1);
+    min-height: 100px;
 
-  > .flex-item:first-child {
-    height: 100px;
-    line-height: 100px;
-  }
-}
+    &:nth-child(1) {
+      margin-right: 5px;
+    }
 
-.flex--align-items--stretch {
-  @extend %flex-container--align-items;
-  @include align-items(stretch);
-}
-
-.flex--align-self {
-  @extend %flex-container;
-  @include justify-content(space-around);
-
-  > .flex-item--auto {
-    @extend .flex-item;
-    @include align-self(auto);
-  }
-
-  > .flex-item--flex-start {
-    @extend .flex-item;
-    @include align-self(flex-start);
-  }
-
-  > .flex-item--center {
-    @extend .flex-item;
-    @include align-self(center);
-  }
-
-  > .flex-item--flex-end {
-    @extend .flex-item;
-    @include align-self(flex-end);
-  }
-
-  > .flex-item--baseline {
-    @extend .flex-item;
-    @include align-self(baseline);
-  }
-
-  > .flex-item--stretch {
-    @extend .flex-item;
-    @include align-self(stretch);
-  }
-}
-
-.flex--flex-direction--row {
-  @extend %flex-container;
-  @include flex-direction(row);
-}
-
-.flex--flex-direction--row-reverse {
-  @extend %flex-container;
-  @include flex-direction(row-reverse);
-}
-
-.flex--flex-direction--column {
-  @extend %flex-container;
-  @include flex-direction(column);
-}
-
-.flex--flex-direction--column-reverse {
-  @extend %flex-container;
-  @include flex-direction(column-reverse);
-}
-
-.flex--flex-wrap--nowrap {
-  @extend %flex-container;
-  @include flex-wrap(nowrap);
-}
-
-.flex--flex-wrap--wrap {
-  @extend %flex-container;
-  @include flex-wrap(wrap);
-}
-
-.flex--flex-wrap--wrap-reverse {
-  @extend %flex-container;
-  @include flex-wrap(wrap-reverse);
-}
-
-  $flex-item-dimension: 220px;
-
-  .flex-item {
-    @include display-flex();
-    @include justify-content(center);
-    @include align-items(center);
-    background-color: hotpink;
-    color: white;
-    height: $flex-item-dimension;
-    text-align: center;
-    width: $flex-item-dimension;
+    &:nth-child(2) {
+      margin-left: 5px;
+    }
   }
 
 // Centered Box
@@ -196,8 +83,8 @@ $holy-grail-margin: 5px;
   @include display-flex();
   @include flex-direction(column);
   margin: 0 auto;
-  width: 800px;
   text-align: center;
+  width: 100%;
 
   &.is-mobile {
     max-width: 320px;
@@ -250,21 +137,21 @@ $holy-grail-margin: 5px;
 
 // Nav
 
-%flex-nav-item {
-  @include align-items(center);
-  @include display-flex();
-  @include justify-content(center);
-  background-color: #ccc;
-  border: {
-    left: 1px solid #999;
-  };
-  padding: 5px 10px;
-}
-
 .flex-nav {
   @include display-flex();
   width: 100%;
 }
+
+  %flex-nav-item {
+    @include align-items(center);
+    @include display-flex();
+    @include justify-content(center);
+    background-color: #ccc;
+    border: {
+      left: 1px solid #999;
+    };
+    padding: 5px 10px;
+  }
 
   .flex-nav-item {
     @extend %flex-nav-item;

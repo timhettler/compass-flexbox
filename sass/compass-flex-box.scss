@@ -2,6 +2,8 @@
 @import "compass/css3/box-sizing";
 @import "compass/css3/transition";
 
+@import "libs/prism";
+
 body {
   font-family: Helvetica;
 }
@@ -12,6 +14,38 @@ body {
   min-height: 250px;
   width: 100%;
 }
+
+$flex-item-dimension: 220px;
+
+.flex-item {
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(center);
+  background-color: hotpink;
+  color: white;
+  height: $flex-item-dimension;
+  text-align: center;
+  width: $flex-item-dimension;
+}
+
+.code-comparison {
+  @include display-flex();
+  margin: 1.5em 0;
+  width: 100%;
+}
+
+  .code-comparison--child {
+    @include flex(1);
+    min-height: 100px;
+
+    &:nth-child(1) {
+      margin-right: 5px;
+    }
+
+    &:nth-child(2) {
+      margin-left: 5px;
+    }
+  }
 
 .flex {
   @extend %flex-container;
@@ -147,19 +181,6 @@ body {
   @include flex-wrap(wrap-reverse);
 }
 
-  $flex-item-dimension: 220px;
-
-  .flex-item {
-    @include display-flex();
-    @include justify-content(center);
-    @include align-items(center);
-    background-color: hotpink;
-    color: white;
-    height: $flex-item-dimension;
-    text-align: center;
-    width: $flex-item-dimension;
-  }
-
 // Centered Box
 
 .centered-box-container {
@@ -196,8 +217,8 @@ $holy-grail-margin: 5px;
   @include display-flex();
   @include flex-direction(column);
   margin: 0 auto;
-  width: 800px;
   text-align: center;
+  width: 100%;
 
   &.is-mobile {
     max-width: 320px;
@@ -250,21 +271,21 @@ $holy-grail-margin: 5px;
 
 // Nav
 
-%flex-nav-item {
-  @include align-items(center);
-  @include display-flex();
-  @include justify-content(center);
-  background-color: #ccc;
-  border: {
-    left: 1px solid #999;
-  };
-  padding: 5px 10px;
-}
-
 .flex-nav {
   @include display-flex();
   width: 100%;
 }
+
+  %flex-nav-item {
+    @include align-items(center);
+    @include display-flex();
+    @include justify-content(center);
+    background-color: #ccc;
+    border: {
+      left: 1px solid #999;
+    };
+    padding: 5px 10px;
+  }
 
   .flex-nav-item {
     @extend %flex-nav-item;

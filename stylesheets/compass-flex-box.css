@@ -1,9 +1,195 @@
-/* line 5, ../sass/compass-flex-box.scss */
+code[class*="language-"],
+pre[class*="language-"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  color: #111;
+  direction: ltr;
+  font-family: "SourceCodePro", Consolas, monospace;
+  line-height: 1.2em;
+  max-width: 100%;
+  text-align: left;
+  text-shadow: 0 1px #fff;
+  white-space: pre;
+  word-spacing: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 1.2em;
+  position: relative;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3) inset, inset -1px -1px 0 0 rgba(0, 0, 0, 0.1);
+  background: FloralWhite;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  padding: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #666666;
+}
+
+.token.punctuation,
+.token.operation {
+  color: #666666;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag {
+  color: #bb2031;
+}
+
+.token.selector,
+.token.placeholder,
+.token.function,
+.token.mixin,
+.token.media,
+.token.attr-name {
+  color: #009569;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.interpolation {
+  color: #bc9a69;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #4e9cd4;
+}
+
+.token.regex,
+.token.boolean,
+.token.null,
+.token.unit,
+.token.string {
+  color: #983168;
+}
+
+.token.variable,
+.token.parent {
+  color: #a74722;
+}
+
+.token.flag {
+  color: #fa5400;
+  font-weight: bold;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre[data-line] {
+  position: relative;
+  padding: 1.2em 0 1.2em 1.2em;
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1.2em;
+  /* Same as .prism’s padding-top */
+  background: rgba(153, 122, 102, 0.08);
+  background: -moz-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
+  background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
+  background: -o-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
+  background: linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .3em;
+  min-width: 1em;
+  padding: 0 .4em;
+  background-color: rgba(153, 122, 102, 0.4);
+  color: #f5f2f0;
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+.line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}
+
+.language-css:after,
+.language-scss:after {
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  top: 0;
+  left: 1.2em;
+  padding: 0 .4em;
+  background-color: rgba(153, 122, 102, 0.4);
+  color: #f5f2f0;
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  border-radius: 0 0 0.5em 0.5em;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+.language-css:after {
+  content: 'css';
+}
+
+.language-scss:after {
+  content: 'scss';
+}
+
 body {
   font-family: Helvetica;
 }
 
-/* line 9, ../sass/compass-flex-box.scss */
 .flex, .flex--justify-content--flex-start, .flex--justify-content--center, .flex--justify-content--flex-end, .flex--justify-content--space-between, .flex--justify-content--space-around, .flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch, .flex--align-self, .flex--flex-direction--row, .flex--flex-direction--row-reverse, .flex--flex-direction--column, .flex--flex-direction--column-reverse, .flex--flex-wrap--nowrap, .flex--flex-wrap--wrap, .flex--flex-wrap--wrap-reverse, .centered-box-container {
   background-color: rgba(135, 206, 235, 0.2);
   display: -webkit-box;
@@ -15,215 +201,6 @@ body {
   width: 100%;
 }
 
-/* line 20, ../sass/compass-flex-box.scss */
-.flex--justify-content--flex-start {
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-}
-
-/* line 25, ../sass/compass-flex-box.scss */
-.flex--justify-content--center {
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-/* line 30, ../sass/compass-flex-box.scss */
-.flex--justify-content--flex-end {
-  -webkit-box-pack: end;
-  -moz-box-pack: end;
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-
-/* line 35, ../sass/compass-flex-box.scss */
-.flex--justify-content--space-between {
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
-/* line 40, ../sass/compass-flex-box.scss */
-.flex--justify-content--space-around {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-
-/* line 45, ../sass/compass-flex-box.scss */
-.flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-
-/* line 50, ../sass/compass-flex-box.scss */
-.flex--align-items--flex-start {
-  -webkit-box-align: start;
-  -moz-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-}
-
-/* line 55, ../sass/compass-flex-box.scss */
-.flex--align-items--center {
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-/* line 60, ../sass/compass-flex-box.scss */
-.flex--align-items--flex-end {
-  -webkit-box-align: end;
-  -moz-box-align: end;
-  -ms-flex-align: end;
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
-}
-
-/* line 65, ../sass/compass-flex-box.scss */
-.flex--align-items--baseline {
-  -webkit-box-align: baseline;
-  -moz-box-align: baseline;
-  -ms-flex-align: baseline;
-  -webkit-align-items: baseline;
-  align-items: baseline;
-}
-/* line 69, ../sass/compass-flex-box.scss */
-.flex--align-items--baseline > .flex-item:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--auto:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--flex-start:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--center:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--flex-end:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--baseline:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--stretch:first-child, .flex--align-items--baseline > .centered-box:first-child {
-  height: 100px;
-  line-height: 100px;
-}
-
-/* line 75, ../sass/compass-flex-box.scss */
-.flex--align-items--stretch {
-  -webkit-box-align: stretch;
-  -moz-box-align: stretch;
-  -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-}
-
-/* line 80, ../sass/compass-flex-box.scss */
-.flex--align-self {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-}
-/* line 84, ../sass/compass-flex-box.scss */
-.flex--align-self > .flex-item--auto {
-  -ms-flex-item-align: auto;
-  -webkit-align-self: auto;
-  align-self: auto;
-}
-/* line 89, ../sass/compass-flex-box.scss */
-.flex--align-self > .flex-item--flex-start {
-  -ms-flex-item-align: start;
-  -webkit-align-self: flex-start;
-  align-self: flex-start;
-}
-/* line 94, ../sass/compass-flex-box.scss */
-.flex--align-self > .flex-item--center {
-  -ms-flex-item-align: center;
-  -webkit-align-self: center;
-  align-self: center;
-}
-/* line 99, ../sass/compass-flex-box.scss */
-.flex--align-self > .flex-item--flex-end {
-  -ms-flex-item-align: end;
-  -webkit-align-self: flex-end;
-  align-self: flex-end;
-}
-/* line 104, ../sass/compass-flex-box.scss */
-.flex--align-self > .flex-item--baseline {
-  -ms-flex-item-align: baseline;
-  -webkit-align-self: baseline;
-  align-self: baseline;
-}
-/* line 109, ../sass/compass-flex-box.scss */
-.flex--align-self > .flex-item--stretch {
-  -ms-flex-item-align: stretch;
-  -webkit-align-self: stretch;
-  align-self: stretch;
-}
-
-/* line 115, ../sass/compass-flex-box.scss */
-.flex--flex-direction--row {
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-}
-
-/* line 120, ../sass/compass-flex-box.scss */
-.flex--flex-direction--row-reverse {
-  -webkit-box-direction: reverse;
-  -moz-box-direction: reverse;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -ms-flex-direction: row-reverse;
-  -webkit-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
-
-/* line 125, ../sass/compass-flex-box.scss */
-.flex--flex-direction--column {
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-
-/* line 130, ../sass/compass-flex-box.scss */
-.flex--flex-direction--column-reverse {
-  -webkit-box-direction: reverse;
-  -moz-box-direction: reverse;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -ms-flex-direction: column-reverse;
-  -webkit-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-}
-
-/* line 135, ../sass/compass-flex-box.scss */
-.flex--flex-wrap--nowrap {
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  -ms-flex-wrap: nowrap;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-}
-
-/* line 140, ../sass/compass-flex-box.scss */
-.flex--flex-wrap--wrap {
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-/* line 145, ../sass/compass-flex-box.scss */
-.flex--flex-wrap--wrap-reverse {
-  -ms-flex-wrap: wrap-reverse;
-  -webkit-flex-wrap: wrap-reverse;
-  flex-wrap: wrap-reverse;
-}
-
-/* line 152, ../sass/compass-flex-box.scss */
 .flex-item, .flex--align-self > .flex-item--auto, .flex--align-self > .flex-item--flex-start, .flex--align-self > .flex-item--center, .flex--align-self > .flex-item--flex-end, .flex--align-self > .flex-item--baseline, .flex--align-self > .flex-item--stretch, .centered-box {
   display: -webkit-box;
   display: -moz-box;
@@ -247,7 +224,213 @@ body {
   width: 220px;
 }
 
-/* line 165, ../sass/compass-flex-box.scss */
+.code-comparison {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 1.5em 0;
+  width: 100%;
+}
+
+.code-comparison--child {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  min-height: 100px;
+}
+.code-comparison--child:nth-child(1) {
+  margin-right: 5px;
+}
+.code-comparison--child:nth-child(2) {
+  margin-left: 5px;
+}
+
+.flex--justify-content--flex-start {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+.flex--justify-content--center {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.flex--justify-content--flex-end {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.flex--justify-content--space-between {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.flex--justify-content--space-around {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.flex--align-items--flex-start {
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.flex--align-items--center {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.flex--align-items--flex-end {
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+.flex--align-items--baseline {
+  -webkit-box-align: baseline;
+  -moz-box-align: baseline;
+  -ms-flex-align: baseline;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+.flex--align-items--baseline > .flex-item:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--auto:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--flex-start:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--center:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--flex-end:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--baseline:first-child, .flex--align-self.flex--align-items--baseline > .flex-item--stretch:first-child, .flex--align-items--baseline > .centered-box:first-child {
+  height: 100px;
+  line-height: 100px;
+}
+
+.flex--align-items--stretch {
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+.flex--align-self {
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+.flex--align-self > .flex-item--auto {
+  -ms-flex-item-align: auto;
+  -webkit-align-self: auto;
+  align-self: auto;
+}
+.flex--align-self > .flex-item--flex-start {
+  -ms-flex-item-align: start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+.flex--align-self > .flex-item--center {
+  -ms-flex-item-align: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+.flex--align-self > .flex-item--flex-end {
+  -ms-flex-item-align: end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+.flex--align-self > .flex-item--baseline {
+  -ms-flex-item-align: baseline;
+  -webkit-align-self: baseline;
+  align-self: baseline;
+}
+.flex--align-self > .flex-item--stretch {
+  -ms-flex-item-align: stretch;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+
+.flex--flex-direction--row {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.flex--flex-direction--row-reverse {
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.flex--flex-direction--column {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex--flex-direction--column-reverse {
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.flex--flex-wrap--nowrap {
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -ms-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.flex--flex-wrap--wrap {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex--flex-wrap--wrap-reverse {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
 .centered-box-container {
   -webkit-box-pack: center;
   -moz-box-pack: center;
@@ -262,24 +445,20 @@ body {
   height: 500px;
 }
 
-/* line 172, ../sass/compass-flex-box.scss */
 .centered-box {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 176, ../sass/compass-flex-box.scss */
 .centered-box:hover {
   height: 400px;
   width: 500px;
 }
 
-/* line 186, ../sass/compass-flex-box.scss */
 .holy-grail > header, .holy-grail > footer, .holy-grail-body article, .holy-grail-body nav, .holy-grail-body aside {
   padding: 10px;
 }
-/* line 189, ../sass/compass-flex-box.scss */
 .is-mobile .holy-grail > header, .is-mobile .holy-grail > footer, .is-mobile .holy-grail-body article, .holy-grail-body .is-mobile article, .is-mobile .holy-grail-body nav, .holy-grail-body .is-mobile nav, .is-mobile .holy-grail-body aside, .holy-grail-body .is-mobile aside {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -293,7 +472,6 @@ body {
   order: 1;
 }
 
-/* line 195, ../sass/compass-flex-box.scss */
 .holy-grail {
   display: -webkit-box;
   display: -moz-box;
@@ -306,19 +484,16 @@ body {
   -webkit-flex-direction: column;
   flex-direction: column;
   margin: 0 auto;
-  width: 800px;
   text-align: center;
+  width: 100%;
 }
-/* line 202, ../sass/compass-flex-box.scss */
 .holy-grail.is-mobile {
   max-width: 320px;
 }
-/* line 206, ../sass/compass-flex-box.scss */
 .holy-grail > header, .holy-grail > footer {
   background-color: Moccasin;
 }
 
-/* line 212, ../sass/compass-flex-box.scss */
 .holy-grail-body {
   display: -webkit-box;
   display: -moz-box;
@@ -333,7 +508,6 @@ body {
   margin: 5px 0;
   width: 100%;
 }
-/* line 218, ../sass/compass-flex-box.scss */
 .is-mobile .holy-grail-body {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -342,7 +516,6 @@ body {
   flex-direction: column;
   margin: 0;
 }
-/* line 223, ../sass/compass-flex-box.scss */
 .holy-grail-body article {
   -webkit-box-flex: 3;
   -moz-box-flex: 3;
@@ -358,11 +531,9 @@ body {
   margin: 0 5px;
   min-height: 100px;
 }
-/* line 231, ../sass/compass-flex-box.scss */
 .is-mobile .holy-grail-body article {
   margin: 0;
 }
-/* line 236, ../sass/compass-flex-box.scss */
 .holy-grail-body nav {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -376,7 +547,6 @@ body {
   order: 1;
   background-color: hotpink;
 }
-/* line 243, ../sass/compass-flex-box.scss */
 .holy-grail-body aside {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -391,7 +561,15 @@ body {
   background-color: Thistle;
 }
 
-/* line 253, ../sass/compass-flex-box.scss */
+.flex-nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+}
+
 .flex-nav-item, .flex-nav-item--search {
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -413,22 +591,10 @@ body {
   padding: 5px 10px;
 }
 
-/* line 264, ../sass/compass-flex-box.scss */
-.flex-nav {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  width: 100%;
-}
-
-/* line 272, ../sass/compass-flex-box.scss */
 .flex-nav-item:hover {
   background-color: #aaa;
 }
 
-/* line 277, ../sass/compass-flex-box.scss */
 .flex-nav-item--search {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -436,14 +602,12 @@ body {
   -webkit-flex: 1;
   flex: 1;
 }
-/* line 281, ../sass/compass-flex-box.scss */
 .flex-nav-item--search label {
   display: block;
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
 }
-/* line 288, ../sass/compass-flex-box.scss */
 .flex-nav-item--search input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
