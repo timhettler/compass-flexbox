@@ -1,0 +1,184 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/hyphenation";
+
+$highlight-padding: 1.2em;
+
+code[class*="language-"],
+pre[class*="language-"] {
+    @include box-sizing('border-box');
+    @include hyphens(none);
+    color: #111;
+    direction: ltr;
+    font-family: "SourceCodePro", Consolas, monospace;
+    line-height: $highlight-padding;
+    max-width: 100%;
+    text-align: left;
+    text-shadow: 0 1px #fff;
+    white-space: pre;
+    word-spacing: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    @include border-radius();
+    padding: $highlight-padding;
+    position: relative;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3) inset, inset -1px -1px 0 0 rgba(0, 0, 0, 0.1);
+    background: FloralWhite;
+    margin: {
+        bottom: 0;
+        top: 0;
+    };
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    @include border-radius(0.3em);
+    padding: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #666666;
+}
+
+.token.punctuation,
+.token.operation {
+  color: #666666;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag {
+  color: #bb2031;
+}
+
+.token.selector,
+.token.placeholder,
+.token.function,
+.token.mixin,
+.token.media,
+.token.attr-name {
+  color: #009569;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.interpolation {
+  color: #bc9a69;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #4e9cd4;
+}
+
+.token.regex,
+.token.boolean,
+.token.null,
+.token.unit,
+.token.string {
+  color: #983168;
+}
+
+.token.variable,
+.token.parent {
+  color: #a74722;
+}
+
+.token.flag {
+  color: #fa5400;
+  font-weight: bold;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre[data-line] {
+    position: relative;
+    padding: $highlight-padding 0 $highlight-padding $highlight-padding;
+}
+
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: $highlight-padding; /* Same as .prism’s padding-top */
+
+    background: hsla(24, 20%, 50%,.08);
+    background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
+    pointer-events: none;
+
+    line-height: inherit;
+    white-space: pre;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+    content: attr(data-start);
+    position: absolute;
+    top: .4em;
+    left: .3em;
+    min-width: 1em;
+    padding: 0 .4em;
+    background-color: hsla(24, 20%, 50%,.4);
+    color: hsl(24, 20%, 95%);
+    font: bold 65%/1.5 sans-serif;
+    text-align: center;
+    vertical-align: .3em;
+    border-radius: 999px;
+    text-shadow: none;
+    box-shadow: 0 1px white;
+}
+
+.line-highlight[data-end]:after {
+    content: attr(data-end);
+    top: auto;
+    bottom: .4em;
+}
+
+.language-css:after,
+.language-scss:after {
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    top: 0;
+    left:  $highlight-padding;
+    padding: 0 .4em;
+    background-color: hsla(24, 20%, 50%,.4);
+    color: hsl(24, 20%, 95%);
+    font: bold 65%/1.5 sans-serif;
+    text-align: center;
+    border-radius: 0 0 0.5em 0.5em;
+    text-shadow: none;
+    box-shadow: 0 1px white;
+}
+
+.language-css:after {
+    content: 'css';
+}
+
+.language-scss:after {
+    content: 'scss';
+}
