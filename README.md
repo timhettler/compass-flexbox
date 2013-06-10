@@ -1,6 +1,6 @@
 # Compass Flexbox
 
-Wading through the morass of different flexbox implementations is an exhausting process. In most cases, both the properties and values are different in each syntac. It can be tempting to just say "screw it" and only build with the latest version of flexbox, but without the old implementations, flexbox support isn't broad enough for use on sites that aren't made for, well, people like you and me. This Compass extension provides mixins for latest flexbox syntax, and automatically translates to the "ie" and "legacy" syntaxes when possible.
+Wading through the morass of different flexbox implementations is an exhausting process. In most cases, both the properties and values are different in each syntax. It can be tempting to just say "screw it" and only build with the latest version of flexbox, but without the old implementations, flexbox support isn't broad enough for use on sites that aren't made for - well - people like you and me. This Compass extension provides mixins for latest flexbox syntax, and automatically translates to the "ie" and "legacy" syntaxes when possible.
 
 Warnings are generated in the console when using a property that is incompatible with the older versions of Flexbox, or when a specific browser has a buggy implementation of a certain property/value combination. If you find the warnings annoying, you can turn them off with the `--quiet` command-line option or the `:quiet` Sass option.
 
