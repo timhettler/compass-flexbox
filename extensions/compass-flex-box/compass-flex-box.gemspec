@@ -2,8 +2,8 @@ require './lib/compass-flex-box'
 
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "0.3"
-  s.date = "2013-06-07"
+  s.version = "1.0"
+  s.date = "2013-06-10"
 
   # Gem Details
   s.name = "compass-flex-box"
