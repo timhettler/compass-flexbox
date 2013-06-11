@@ -288,9 +288,11 @@ body {
 }
 
 .flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .flex--align-items--flex-start {
@@ -338,9 +340,11 @@ body {
 }
 
 .flex--align-self {
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 .flex--align-self > .flex-item--auto {
   -ms-flex-item-align: auto;

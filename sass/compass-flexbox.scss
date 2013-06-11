@@ -1,3 +1,6 @@
+$flex-legacy-enabled: false;
+$flex-wrap-required : false;
+
 @import "flexbox";
 @import "compass/css3/box-sizing";
 @import "compass/css3/transition";
@@ -78,7 +81,7 @@ $flex-item-dimension: 220px;
 
 %flex-container--align-items {
   @extend %flex-container;
-  @include justify-content(space-around);
+  @include justify-content(space-between);
 }
 
 .flex--align-items--flex-start {
@@ -113,7 +116,7 @@ $flex-item-dimension: 220px;
 
 .flex--align-self {
   @extend %flex-container;
-  @include justify-content(space-around);
+  @include justify-content(space-between);
 
   > .flex-item--auto {
     @extend .flex-item;

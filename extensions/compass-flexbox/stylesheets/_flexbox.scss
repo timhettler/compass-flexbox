@@ -1,16 +1,20 @@
 @import "compass/css3/shared";
 
+$legacy-support: -moz, -webkit, not -o, not -ms, not -khtml, not official;
+$ie-support: not -moz, not -webkit, not -o, -ms, not -khtml, not official;
+$standard-support: not -moz, -webkit, not -o, not -ms, not -khtml, official;
+
 // Enabling flexbox: setting an element to be a flex container
 @mixin display-flex() {
-    @include experimental-value(display, box, -moz, -webkit, not -o, not -ms, not -khtml, not official);
-    @include experimental-value(display, flexbox, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
-    @include experimental-value(display, flex, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+    @include experimental-value(display, box, $legacy-support...);
+    @include experimental-value(display, flexbox, $ie-support...);
+    @include experimental-value(display, flex, $standard-support...);
 }
 
 @mixin display-inline-flex() {
-    @include experimental-value(display, inline-box, -moz, -webkit, not -o, not -ms, not -khtml, not official);
-    @include experimental-value(display, inline-flexbox, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
-    @include experimental-value(display, inline-flex, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+    @include experimental-value(display, inline-box, $legacy-support...);
+    @include experimental-value(display, inline-flexbox, $ie-support...);
+    @include experimental-value(display, inline-flex, $standard-support...);
 }
 
 // Axis alignment: specifying alignment of items along the main flexbox axis
@@ -142,9 +146,9 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     @if $legacy-property {
         @if $legacy-value {
             @if $standard-property == flex-direction and ($value == row-reverse or $value == column-reverse) {
-                @include experimental(box-direction, reverse, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+                @include experimental(box-direction, reverse, $legacy-support...);
             }
-            @include experimental($legacy-property, $legacy-value, -moz, -webkit, not -o, not -ms, not -khtml, not official);
+            @include experimental($legacy-property, $legacy-value, $legacy-support...);
         }
     } @else {
         @warn _support-warning($standard-property, "legacy");
@@ -152,11 +156,11 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
 
     // IE 10
     @if $ie-property and $ie-value {
-        @include experimental($ie-property, $ie-value, not -moz, not -webkit, not -o, -ms, not -khtml, not official);
+        @include experimental($ie-property, $ie-value, $ie-support...);
     }
 
     // Chrome 21+, Opera 12.1, Firefox 22+
-    @include experimental($standard-property, $standard-value, not -moz, -webkit, not -o, not -ms, not -khtml, official);
+    @include experimental($standard-property, $standard-value, $standard-support...);
 }
 
 @function _flex-value($property, $value, $syntax) {
