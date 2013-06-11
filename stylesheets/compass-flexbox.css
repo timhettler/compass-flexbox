@@ -287,14 +287,6 @@ body {
   justify-content: space-around;
 }
 
-.flex--align-items--flex-start, .flex--align-items--center, .flex--align-items--flex-end, .flex--align-items--baseline, .flex--align-items--stretch {
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-}
-
 .flex--align-items--flex-start {
   -webkit-box-align: start;
   -moz-box-align: start;

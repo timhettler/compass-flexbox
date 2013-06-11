@@ -81,7 +81,6 @@ $flex-item-dimension: 220px;
 
 %flex-container--align-items {
   @extend %flex-container;
-  @include justify-content(space-between);
 }
 
 .flex--align-items--flex-start {
