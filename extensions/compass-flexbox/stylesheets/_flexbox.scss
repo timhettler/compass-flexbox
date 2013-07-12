@@ -1,20 +1,20 @@
 @import "compass/css3/shared";
 
-$legacy-support: -moz, -webkit, not -o, not -ms, not -khtml, not official;
-$ie-support: not -moz, not -webkit, not -o, -ms, not -khtml, not official;
-$standard-support: not -moz, -webkit, not -o, not -ms, not -khtml, official;
+$flexbox-legacy-support: -moz, -webkit, not -o, not -ms, not -khtml, not official;
+$flexbox-ie-support: not -moz, not -webkit, not -o, -ms, not -khtml, not official;
+$flexbox-standard-support: not -moz, -webkit, not -o, not -ms, not -khtml, official;
 
 // Enabling flexbox: setting an element to be a flex container
 @mixin display-flex() {
-    @include experimental-value(display, box, $legacy-support...);
-    @include experimental-value(display, flexbox, $ie-support...);
-    @include experimental-value(display, flex, $standard-support...);
+    @include experimental-value(display, box, $flexbox-legacy-support...);
+    @include experimental-value(display, flexbox, $flexbox-ie-support...);
+    @include experimental-value(display, flex, $flexbox-standard-support...);
 }
 
 @mixin display-inline-flex() {
-    @include experimental-value(display, inline-box, $legacy-support...);
-    @include experimental-value(display, inline-flexbox, $ie-support...);
-    @include experimental-value(display, inline-flex, $standard-support...);
+    @include experimental-value(display, inline-box, $flexbox-legacy-support...);
+    @include experimental-value(display, inline-flexbox, $flexbox-ie-support...);
+    @include experimental-value(display, inline-flex, $flexbox-standard-support...);
 }
 
 // Axis alignment: specifying alignment of items along the main flexbox axis
@@ -146,9 +146,9 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     @if $legacy-property {
         @if $legacy-value {
             @if $standard-property == flex-direction and ($value == row-reverse or $value == column-reverse) {
-                @include experimental(box-direction, reverse, $legacy-support...);
+                @include experimental(box-direction, reverse, $flexbox-legacy-support...);
             }
-            @include experimental($legacy-property, $legacy-value, $legacy-support...);
+            @include experimental($legacy-property, $legacy-value, $flexbox-legacy-support...);
         }
     } @else {
         @warn _support-warning($standard-property, "legacy");
@@ -156,41 +156,41 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
 
     // IE 10
     @if $ie-property and $ie-value {
-        @include experimental($ie-property, $ie-value, $ie-support...);
+        @include experimental($ie-property, $ie-value, $flexbox-ie-support...);
     }
 
     // Chrome 21+, Opera 12.1, Firefox 22+
-    @include experimental($standard-property, $standard-value, $standard-support...);
+    @include experimental($standard-property, $standard-value, $flexbox-standard-support...);
 }
 
 @function _flex-value($property, $value, $syntax) {
-    $new-value: $value;
-    $warning: false;
+    $flexbox-new-value: $value;
+    $flexbox-warning: false;
 
     @if $property == justify-content {
         @if $value == flex-start {
             @if $syntax == legacy or $syntax == ie {
-                $new-value: start;
+                $flexbox-new-value: start;
             }
         }
         @else if $value == flex-end {
             @if $syntax == legacy or $syntax == ie {
-                $new-value: end;
+                $flexbox-new-value: end;
             }
         }
         @else if $value == space-between {
             @if $syntax == legacy {
-                $warning: "\"#{$property}: #{$value}\" does not work in the legacy Firefox implementation";
+                $flexbox-warning: "\"#{$property}: #{$value}\" does not work in the legacy Firefox implementation";
             }
             @if $syntax == legacy or $syntax == ie {
-                $new-value: justify;
+                $flexbox-new-value: justify;
             }
         }
         @else if $value == space-around {
             @if $syntax == legacy {
-                $new-value: null;
+                $flexbox-new-value: null;
             } @else if $syntax == ie {
-                $new-value: distribute;
+                $flexbox-new-value: distribute;
             }
         }
     }
@@ -198,12 +198,12 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     @if $property == align-items {
         @if $value == flex-start {
             @if $syntax == legacy or $syntax == ie {
-                $new-value: start;
+                $flexbox-new-value: start;
             }
         }
         @else if $value == flex-end {
             @if $syntax == legacy or $syntax == ie {
-                $new-value: end;
+                $flexbox-new-value: end;
             }
         }
     }
@@ -211,12 +211,12 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     @if $property == align-self {
         @if $value == flex-start {
             @if $syntax == ie {
-                $new-value: start;
+                $flexbox-new-value: start;
             }
         }
         @else if $value == flex-end {
             @if $syntax == ie {
-                $new-value: end;
+                $flexbox-new-value: end;
             }
         }
     }
@@ -224,49 +224,49 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     @if $property == align-content {
         @if $value == flex-start {
             @if $syntax == ie {
-                $new-value: start;
+                $flexbox-new-value: start;
             }
         }
         @else if $value == flex-end {
             @if $syntax == ie {
-                $new-value: end;
+                $flexbox-new-value: end;
             }
         }
         @else if $value == space-between {
             @if $syntax == ie {
-                $new-value: justify;
+                $flexbox-new-value: justify;
             }
         }
         @else if $value == space-around {
             @if $syntax == ie {
-                $new-value: distribute;
+                $flexbox-new-value: distribute;
             }
         }
     }
 
     @if $property == order {
         @if $syntax == legacy and $value < 1 {
-            $warning: "\"#{$property}\" must be a positive integer in the \"#{$syntax}\" syntax";
-            $new-value: null;
+            $flexbox-warning: "\"#{$property}\" must be a positive integer in the \"#{$syntax}\" syntax";
+            $flexbox-new-value: null;
         }
     }
 
     @if $property == flex {
         @if $syntax == legacy and type_of($value) != number {
-            $warning: "\"#{$property}\" only accepts an integer in the \"#{$syntax}\" syntax";
-            $new-value: null;
+            $flexbox-warning: "\"#{$property}\" only accepts an integer in the \"#{$syntax}\" syntax";
+            $flexbox-new-value: null;
         }
     }
 
     @if $property == flex-direction {
         @if $value == row or $value == row-reverse {
             @if $syntax == legacy {
-                $new-value: horizontal;
+                $flexbox-new-value: horizontal;
             }
         }
         @else if $value == column or $value == column-reverse {
             @if $syntax == legacy {
-                $new-value: vertical;
+                $flexbox-new-value: vertical;
             }
         }
     }
@@ -274,27 +274,27 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     @if $property == flex-wrap {
         @if $value == nowrap {
             @if $syntax == legacy {
-                $new-value: single;
+                $flexbox-new-value: single;
             }
         }
         @else if $value == wrap {
             @if $syntax == legacy {
                 @warn "\"#{$property}: #{$value}\" is not supported consistently in the \"#{$syntax}\" syntax";
-                $new-value: multiple;
+                $flexbox-new-value: multiple;
             }
         }
         @else if $value == wrap-reverse {
             @if $syntax == legacy {
-                $new-value: null;
+                $flexbox-new-value: null;
             }
         }
     }
 
-    @if $new-value == null or $warning {
-        @warn if($warning, $warning, _support-warning("#{$property}: #{$value}", $syntax));
+    @if $flexbox-new-value == null or $flexbox-warning {
+        @warn if($flexbox-warning, $flexbox-warning, _support-warning("#{$property}: #{$value}", $syntax));
     }
 
-    @return $new-value;
+    @return $flexbox-new-value;
 }
 
 @function _support-warning($value, $syntax) {
