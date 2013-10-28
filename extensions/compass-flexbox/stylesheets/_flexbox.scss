@@ -54,7 +54,7 @@ $default-align-content: stretch !default;
 @mixin align-content(
     $alignment: $default-align-content
 ) {
-    @include _flex-property(align-items, $alignment, flex-line-pack, null);
+    @include _flex-property(align-content, $alignment, flex-line-pack, null);
 }
 
 // Display order: specifying the order of flex items
