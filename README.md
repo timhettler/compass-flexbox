@@ -53,7 +53,7 @@ By default, the extension doesn't add any files to your project. An example scss
 ### Configurable Variables
   
   ```scss
-  $flexbox-display-warnings: truw
+  $flexbox-display-warnings: true
   ```
 
 Toggles display of warnings when using flexbox properties with inconsistent or buggy implementations.
