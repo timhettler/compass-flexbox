@@ -3,6 +3,7 @@
 $flexbox-legacy-support: -moz, -webkit, not -o, not -ms, not -khtml, not official;
 $flexbox-ie-support: not -moz, not -webkit, not -o, -ms, not -khtml, not official;
 $flexbox-standard-support: not -moz, -webkit, not -o, not -ms, not -khtml, official;
+$flexbox-display-warnings: true !default;
 
 // Enabling flexbox: setting an element to be a flex container
 @mixin display-flex() {
@@ -150,7 +151,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
             }
             @include experimental($legacy-property, $legacy-value, $flexbox-legacy-support...);
         }
-    } @else {
+    } @else if($flexbox-display-warnings) {
         @warn _support-warning($standard-property, "legacy");
     }
 
@@ -279,7 +280,9 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
         }
         @else if $value == wrap {
             @if $syntax == legacy {
-                @warn "\"#{$property}: #{$value}\" is not supported consistently in the \"#{$syntax}\" syntax";
+                @if($flexbox-display-warnings) {
+                    @warn "\"#{$property}: #{$value}\" is not supported consistently in the \"#{$syntax}\" syntax";
+                }
                 $flexbox-new-value: multiple;
             }
         }
@@ -290,7 +293,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
         }
     }
 
-    @if $flexbox-new-value == null or $flexbox-warning {
+    @if ($flexbox-new-value == null or $flexbox-warning) and $flexbox-display-warnings {
         @warn if($flexbox-warning, $flexbox-warning, _support-warning("#{$property}: #{$value}", $syntax));
     }
 
