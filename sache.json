@@ -1,0 +1,5 @@
+{
+  "name": "Compass Flexbox",
+  "description": "A compass extension that provides variables & mixins for the latest Flexible Box Layout (flexbox) specification",
+  "tags": ["flex", "flexbox", "css3", "compass"]
+}
